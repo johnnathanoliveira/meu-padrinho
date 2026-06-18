@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    /* Evita zoom indesejado em inputs no iOS */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-brand-black text-brand-white;
+    font-family: 'Inter', sans-serif;
+    /* Previne pull-to-refresh acidental */
+    overscroll-behavior-y: contain;
+  }
+  /* Evita zoom em inputs no iOS (fonte mínima 16px) */
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand-yellow text-brand-black font-bold py-3 px-6 rounded-xl
+           active:scale-95 transition-all duration-150
+           disabled:opacity-50 disabled:cursor-not-allowed
+           min-h-[48px]; /* toque mínimo recomendado */
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border-2 border-brand-yellow text-brand-yellow font-bold
+           py-3 px-6 rounded-xl hover:bg-brand-yellow hover:text-brand-black
+           active:scale-95 transition-all duration-150
+           min-h-[48px];
+  }
+
+  .card {
+    @apply bg-zinc-900 border border-zinc-800 rounded-2xl p-4;
+  }
+
+  .input-field {
+    @apply w-full bg-zinc-800 border border-zinc-700 text-white rounded-xl px-4 py-3
+           focus:outline-none focus:border-brand-yellow transition-colors placeholder-zinc-500
+           min-h-[48px];
+  }
+
+  /* Área de toque mínima para botões ícone */
+  .icon-btn {
+    @apply flex items-center justify-center min-w-[44px] min-h-[44px]
+           rounded-xl active:bg-zinc-800 transition-colors;
+  }
+}
+
+/* Scrollbar customizada */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: #18181b; }
+::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #FFD600; }
+
+/* Esconde scrollbar horizontal nas tabs */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeIn 0.25s ease-out forwards; }
+
+@keyframes pulse-yellow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 214, 0, 0.4); }
+  50%       { box-shadow: 0 0 0 10px rgba(255, 214, 0, 0); }
+}
+.pulse-yellow { animation: pulse-yellow 2s infinite; }
+
+/* Safe area para notch/home bar no iOS */
+.pb-safe { padding-bottom: env(safe-area-inset-bottom, 16px); }
