@@ -183,3 +183,18 @@ create table if not exists pelada_matches (
 
 alter table pelada_matches enable row level security;
 create policy "allow_all_pelada_matches" on pelada_matches for all using (true) with check (true);
+
+-- =============================================
+-- TABELA DE ADMINS
+-- =============================================
+create table if not exists admins (
+  phone text primary key,
+  created_at timestamptz default now()
+);
+
+alter table admins enable row level security;
+create policy "allow_all_admins" on admins for all using (true) with check (true);
+
+-- Insere o admin do .env como primeiro admin
+-- (substitua pelo número real antes de executar)
+-- insert into admins (phone) values ('11999887766');

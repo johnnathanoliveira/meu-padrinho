@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { supabase } from '../../lib/supabase'
 import { UserCheck, Edit2, Check } from 'lucide-react'
 import toast from 'react-hot-toast'
+import AdminManager from '../../components/AdminManager'
 
 const POSITIONS = ['Goleiro', 'Fixo', 'Ala', 'Pivô', 'Atacante', 'Qualquer']
 
@@ -99,6 +100,9 @@ export default function PeladaUsers({ user }) {
         </div>
         <p className="text-zinc-500 text-sm">{users.length} jogadores cadastrados</p>
       </div>
+
+      {/* Gerenciamento de admins */}
+      <AdminManager currentUserModule="pelada" />
 
       {/* Meu perfil */}
       <div className="card border-brand-yellow/30">

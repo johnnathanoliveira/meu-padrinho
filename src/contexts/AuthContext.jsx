@@ -1,9 +1,8 @@
-import { createContext, useContext, useState, useEffect } from 'react'
+import { createContext, useContext, useState, useEffect, useCallback } from 'react'
 import { supabase } from '../lib/supabase'
 
 const AuthContext = createContext(null)
 
-// Chaves separadas por módulo no localStorage
 const STORAGE_KEYS = {
   bolao:  'mpb_user_bolao',
   pelada: 'mpb_user_pelada',
@@ -28,36 +27,49 @@ function clearUser(module) {
 }
 
 export function AuthProvider({ children }) {
-  // Cada módulo tem seu próprio estado
   const [users, setUsers] = useState({ bolao: null, pelada: null })
   const [loading, setLoading] = useState(true)
+  const [adminPhones, setAdminPhones] = useState([]) // lista do banco
 
+  // Carrega usuários do localStorage e admins do banco
   useEffect(() => {
     setUsers({
       bolao:  loadSavedUser('bolao'),
       pelada: loadSavedUser('pelada'),
     })
-    setLoading(false)
+    loadAdmins()
   }, [])
 
-  // Retorna o usuário de um módulo específico
+  const loadAdmins = async () => {
+    try {
+      const { data } = await supabase.from('admins').select('phone')
+      const phones = data?.map(a => a.phone) ?? []
+      // Também inclui os do .env como fallback
+      const envPhones = (import.meta.env.VITE_ADMIN_PHONES || '').split(',').map(p => p.trim()).filter(Boolean)
+      setAdminPhones([...new Set([...phones, ...envPhones])])
+    } catch {
+      // Se tabela não existir ainda, usa só o .env
+      const envPhones = (import.meta.env.VITE_ADMIN_PHONES || '').split(',').map(p => p.trim()).filter(Boolean)
+      setAdminPhones(envPhones)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   const getUserForModule = (module) => users[module] ?? null
 
   const loginWithPhone = async (phone, name, photoUrl, module, position = 'Qualquer') => {
     const cleanPhone = phone.replace(/\D/g, '')
     try {
       const table = module === 'bolao' ? 'bolao_users' : 'pelada_users'
-
-      const { data: existing } = await supabase
-        .from(table).select('*').eq('phone', cleanPhone).single()
+      const { data: existing } = await supabase.from(table).select('*').eq('phone', cleanPhone).single()
 
       let userData
       if (existing) {
         const { data: updated } = await supabase
           .from(table)
           .update({ name, photo_url: photoUrl, ...(module === 'pelada' ? { position } : {}) })
-          .eq('phone', cleanPhone)
-          .select().single()
+          .eq('phone', cleanPhone).select().single()
         userData = updated || existing
       } else {
         const { data: created, error } = await supabase
@@ -83,25 +95,52 @@ export function AuthProvider({ children }) {
       setUsers(prev => ({ ...prev, [module]: null }))
       clearUser(module)
     } else {
-      // Logout geral
       setUsers({ bolao: null, pelada: null })
       clearUser('bolao')
       clearUser('pelada')
     }
   }
 
-  const isAdmin = (module) => {
-    const admins = (import.meta.env.VITE_ADMIN_PHONES || '').split(',').map(p => p.trim())
+  // Verifica se o usuário logado é admin (banco + env)
+  const isAdmin = useCallback((module) => {
     const u = module ? users[module] : (users.bolao || users.pelada)
-    return admins.includes(u?.phone)
+    if (!u?.phone) return false
+    return adminPhones.includes(u.phone)
+  }, [users, adminPhones])
+
+  // Adiciona novo admin (só quem já é admin pode chamar)
+  const addAdmin = async (phone) => {
+    const cleanPhone = phone.replace(/\D/g, '')
+    const { error } = await supabase
+      .from('admins')
+      .upsert({ phone: cleanPhone }, { onConflict: 'phone' })
+    if (!error) {
+      setAdminPhones(prev => [...new Set([...prev, cleanPhone])])
+      return true
+    }
+    return false
   }
 
-  // `user` exposto para compatibilidade — retorna o usuário do módulo ativo
-  // (usado por componentes que já recebem `user` como prop)
+  // Remove admin
+  const removeAdmin = async (phone) => {
+    const cleanPhone = phone.replace(/\D/g, '')
+    const { error } = await supabase.from('admins').delete().eq('phone', cleanPhone)
+    if (!error) {
+      setAdminPhones(prev => prev.filter(p => p !== cleanPhone))
+      return true
+    }
+    return false
+  }
+
   const user = users.bolao || users.pelada
 
   return (
-    <AuthContext.Provider value={{ user, users, loading, getUserForModule, loginWithPhone, logout, isAdmin }}>
+    <AuthContext.Provider value={{
+      user, users, loading,
+      getUserForModule, loginWithPhone, logout,
+      isAdmin, addAdmin, removeAdmin,
+      adminPhones, reloadAdmins: loadAdmins,
+    }}>
       {children}
     </AuthContext.Provider>
   )
