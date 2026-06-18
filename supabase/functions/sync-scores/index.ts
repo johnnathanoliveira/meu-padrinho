@@ -227,6 +227,11 @@ Deno.serve(async (req) => {
         .from('bolao_scores')
         .upsert(upsertRows, { onConflict: 'game_id' })
       if (error) throw new Error(`Supabase upsert error: ${error.message}`)
+
+      // Dispara recálculo do ranking automaticamente após atualizar placares
+      supabase.functions.invoke('calc-ranking').catch(e =>
+        console.warn('calc-ranking invoke error:', e)
+      )
     }
 
     return new Response(

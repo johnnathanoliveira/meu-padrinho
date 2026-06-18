@@ -17,9 +17,11 @@ export default function Home() {
           Meu Padrinho
         </h1>
         <h2 className="text-4xl font-black text-brand-yellow tracking-tight">
-          Barbearia
+          Barber Club
         </h2>
-        <p className="text-zinc-500 mt-2 text-sm">O espaço dos camaradas 💈</p>
+        <p className="text-zinc-500 mt-2 text-sm leading-snug px-4">
+          O checkin será validado após comprovação do pagamento no pix 💈
+        </p>
       </header>
 
       {/* Botões */}
@@ -78,7 +80,7 @@ export default function Home() {
       </main>
 
       <footer className="text-center pb-8 text-zinc-700 text-xs pb-safe">
-        Meu Padrinho Barbearia © 2026
+        Meu Padrinho Barber Club © 2026
       </footer>
     </div>
   )

@@ -42,9 +42,11 @@ export function useScores() {
     setSecondsSince(0)
   }, [])
 
-  // 3. Ciclo completo: sincroniza da API externa → depois lê do Supabase
+  // 3. Ciclo completo: sincroniza da API externa → recalcula ranking → lê do Supabase
   const refresh = useCallback(async () => {
     await syncFromAPI()
+    // Recalcula ranking em paralelo
+    supabase.functions.invoke('calc-ranking').catch(() => {})
     await fetchScores()
   }, [syncFromAPI, fetchScores])
 

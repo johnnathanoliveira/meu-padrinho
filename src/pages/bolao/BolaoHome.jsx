@@ -6,7 +6,8 @@ import { getUpcomingGames, groupGamesByDate, formatDate, getLiveGames } from '..
 import { useScores } from '../../hooks/useScores'
 import LoginModal from '../../components/LoginModal'
 import PerfilPage from '../perfil/PerfilPage'
-import { Trophy, ChevronLeft, Star, Calendar, Share2, Radio, RefreshCw, CircleUserRound } from 'lucide-react'
+import MeusPalpites from './MeusPalpites'
+import { Trophy, ChevronLeft, Star, Calendar, Share2, Radio, RefreshCw, CircleUserRound, ClipboardList } from 'lucide-react'
 import toast from 'react-hot-toast'
 import QRModal from '../../components/QRModal'
 
@@ -183,16 +184,24 @@ export default function BolaoHome() {
       )}
 
       {/* Tabs */}
-      <div className="flex gap-1 p-3 bg-zinc-900/50">
-        <button onClick={() => setTab('jogos')} className={`flex-1 py-2.5 rounded-xl font-bold text-sm transition-all ${tab==='jogos' ? 'bg-brand-yellow text-black' : 'text-zinc-400 hover:text-white'}`}>
-          <Calendar size={15} className="inline mr-1.5" />Jogos
-        </button>
-        <button onClick={() => setTab('ranking')} className={`flex-1 py-2.5 rounded-xl font-bold text-sm transition-all ${tab==='ranking' ? 'bg-brand-yellow text-black' : 'text-zinc-400 hover:text-white'}`}>
-          <Star size={15} className="inline mr-1.5" />Ranking
-        </button>
-        <button onClick={() => setTab('perfil')} className={`flex-1 py-2.5 rounded-xl font-bold text-sm transition-all ${tab==='perfil' ? 'bg-brand-yellow text-black' : 'text-zinc-400 hover:text-white'}`}>
-          <CircleUserRound size={15} className="inline mr-1.5" />Perfil
-        </button>
+      <div className="flex gap-1 p-3 bg-zinc-900/50 overflow-x-auto no-scrollbar">
+        {[
+          { id: 'jogos',    label: 'Jogos',         Icon: Calendar },
+          { id: 'palpites', label: 'Meus Palpites',  Icon: ClipboardList },
+          { id: 'ranking',  label: 'Ranking',        Icon: Star },
+          { id: 'perfil',   label: 'Perfil',         Icon: CircleUserRound },
+        ].map(({ id, label, Icon }) => (
+          <button
+            key={id}
+            onClick={() => setTab(id)}
+            className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl font-bold text-sm
+                        whitespace-nowrap transition-all shrink-0 ${
+              tab === id ? 'bg-brand-yellow text-black' : 'text-zinc-400 hover:text-white'
+            }`}
+          >
+            <Icon size={14} />{label}
+          </button>
+        ))}
       </div>
 
       {/* Content */}
@@ -329,6 +338,8 @@ export default function BolaoHome() {
         )}
 
         {tab === 'perfil' && <PerfilPage module="bolao" />}
+
+        {tab === 'palpites' && <MeusPalpites user={user} getScore={getScore} />}
 
         {tab === 'ranking' && (          <div className="space-y-2 pt-2">
             <p className="text-zinc-600 text-xs text-center mb-4">
