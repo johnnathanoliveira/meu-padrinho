@@ -25,7 +25,7 @@ export default function BolaoHome() {
   const [now, setNow] = useState(new Date())
   const [refreshing, setRefreshing] = useState(false)
 
-  const { getScore, fetchScores, formatLastUpdated, secondsSince, minutesUntilRefresh } = useScores()
+  const { getScore, refresh, syncing, formatLastUpdated, minutesUntilRefresh } = useScores()
 
   const upcomingGames = getUpcomingGames()
   const gamesByDate = groupGamesByDate(upcomingGames.slice(0, 60))
@@ -90,7 +90,7 @@ export default function BolaoHome() {
 
   const handleManualRefresh = async () => {
     setRefreshing(true)
-    await fetchScores()
+    await refresh()
     setRefreshing(false)
     toast.success('Placares atualizados!')
   }
