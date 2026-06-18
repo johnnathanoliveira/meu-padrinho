@@ -209,7 +209,7 @@ export default function LoginModal({ module, onClose, onSuccess }) {
                   </div>
                 )}
               </button>
-              <input ref={fileRef} type="file" accept="image/*" capture="user" className="hidden" onChange={handlePhotoChange} />
+              <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={handlePhotoChange} />
               <p className="text-zinc-500 text-xs">Toca para tirar ou escolher foto</p>
             </div>
 

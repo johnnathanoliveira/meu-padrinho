@@ -11,7 +11,8 @@ import PeladaUsers from './PeladaUsers'
 import JogosSection from './JogosSection'
 import HistoricoSection from './HistoricoSection'
 import ConquistasSection from './ConquistasSection'
-import { Users, ChevronLeft, Share2, CheckSquare, Shuffle, Shield, Trophy, UserCheck, Swords, History } from 'lucide-react'
+import PerfilPage from '../perfil/PerfilPage'
+import { Users, ChevronLeft, Share2, CheckSquare, Shuffle, Shield, Trophy, UserCheck, Swords, History, CircleUserRound } from 'lucide-react'
 
 const TABS = [
   { id: 'checkin',    label: 'Check-in',   Icon: CheckSquare },
@@ -21,6 +22,7 @@ const TABS = [
   { id: 'conquistas', label: 'Conquistas', Icon: Trophy },
   { id: 'historico',  label: 'Histórico',  Icon: History },
   { id: 'jogadores',  label: 'Jogadores',  Icon: UserCheck },
+  { id: 'perfil',     label: 'Meu Perfil', Icon: CircleUserRound },
 ]
 
 export default function PeladaHome() {
@@ -126,6 +128,7 @@ export default function PeladaHome() {
         {tab === 'conquistas' && <ConquistasSection user={user} isAdmin={isAdmin('pelada')} />}
         {tab === 'historico'  && <HistoricoSection  user={user} />}
         {tab === 'jogadores'  && <PeladaUsers       user={user} />}
+        {tab === 'perfil'     && <PerfilPage        module="pelada" />}
       </div>
 
       {showQR && <QRModal url={shareLink} onClose={() => setShowQR(false)} title="Pelada" />}

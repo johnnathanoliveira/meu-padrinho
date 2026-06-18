@@ -5,7 +5,8 @@ import { supabase } from '../../lib/supabase'
 import { getUpcomingGames, groupGamesByDate, formatDate, getLiveGames } from '../../lib/worldCupGames'
 import { useScores } from '../../hooks/useScores'
 import LoginModal from '../../components/LoginModal'
-import { Trophy, ChevronLeft, Star, Calendar, Share2, Radio, RefreshCw } from 'lucide-react'
+import PerfilPage from '../perfil/PerfilPage'
+import { Trophy, ChevronLeft, Star, Calendar, Share2, Radio, RefreshCw, CircleUserRound } from 'lucide-react'
 import toast from 'react-hot-toast'
 import QRModal from '../../components/QRModal'
 
@@ -135,7 +136,10 @@ export default function BolaoHome() {
           <RefreshCw size={17} className={refreshing ? 'animate-spin' : ''} />
         </button>
         <button onClick={() => setShowQR(true)} className="text-zinc-400 hover:text-brand-yellow"><Share2 size={18} /></button>
-        <img src={user.photo_url} alt={user.name} className="w-8 h-8 rounded-full object-cover border border-brand-yellow/40" />
+        <img src={user.photo_url} alt={user.name}
+          className="w-9 h-9 rounded-full object-cover border-2 border-brand-yellow/40 cursor-pointer"
+          onClick={() => setTab('perfil')}
+        />
       </header>
 
       {/* Indicador de atualização automática */}
@@ -185,6 +189,9 @@ export default function BolaoHome() {
         </button>
         <button onClick={() => setTab('ranking')} className={`flex-1 py-2.5 rounded-xl font-bold text-sm transition-all ${tab==='ranking' ? 'bg-brand-yellow text-black' : 'text-zinc-400 hover:text-white'}`}>
           <Star size={15} className="inline mr-1.5" />Ranking
+        </button>
+        <button onClick={() => setTab('perfil')} className={`flex-1 py-2.5 rounded-xl font-bold text-sm transition-all ${tab==='perfil' ? 'bg-brand-yellow text-black' : 'text-zinc-400 hover:text-white'}`}>
+          <CircleUserRound size={15} className="inline mr-1.5" />Perfil
         </button>
       </div>
 
@@ -321,8 +328,9 @@ export default function BolaoHome() {
           </>
         )}
 
-        {tab === 'ranking' && (
-          <div className="space-y-2 pt-2">
+        {tab === 'perfil' && <PerfilPage module="bolao" />}
+
+        {tab === 'ranking' && (          <div className="space-y-2 pt-2">
             <p className="text-zinc-600 text-xs text-center mb-4">
               Resultado certo: 1pt • Placar exato: 2pts
             </p>
