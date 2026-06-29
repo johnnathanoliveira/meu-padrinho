@@ -123,53 +123,53 @@ export const worldCupGames = [
   { id:'g071', date:'2026-06-27', time:'23:00', home:'Argélia',          away:'Áustria',          group:'J', phase:'Grupo', homeFlag:flag('dz'),     awayFlag:flag('at'),     homeScore:3,    awayScore:3 },
   { id:'g072', date:'2026-06-27', time:'23:00', home:'Jordânia',         away:'Argentina',        group:'J', phase:'Grupo', homeFlag:flag('jo'),     awayFlag:flag('ar'),     homeScore:1,    awayScore:3 },
 
-  // ── FASE ELIMINATÓRIA — Round of 32 (Oitavas) ─────────────
+  // ── FASE ELIMINATÓRIA — Round of 32 (16 avos) ─────────────
   // Confrontos confirmados após encerramento da fase de grupos
   // Fonte: Wikipedia / FIFA (horários em BRT)
 
   // 28/jun — Canadá 1×0 África do Sul
-  { id:'r32_1',  date:'2026-06-28', time:'16:00', home:'África do Sul', away:'Canadá',            phase:'Oitavas', homeFlag:flag('za'),     awayFlag:flag('ca'),     homeScore:0,    awayScore:1 },
+  { id:'r32_1',  date:'2026-06-28', time:'16:00', home:'África do Sul', away:'Canadá',            phase:'16 avos', homeFlag:flag('za'),     awayFlag:flag('ca'),     homeScore:0,    awayScore:1 },
 
   // 29/jun — Brasil vs Japão (14h BRT) | Holanda vs Marrocos (20h BRT) | Alemanha vs Paraguai (21:30 BRT)
-  { id:'r32_2',  date:'2026-06-29', time:'14:00', home:'Brasil',         away:'Japão',             phase:'Oitavas', homeFlag:flag('br'),     awayFlag:flag('jp'),     homeScore:null, awayScore:null },
-  { id:'r32_3',  date:'2026-06-29', time:'20:00', home:'Holanda',        away:'Marrocos',          phase:'Oitavas', homeFlag:flag('nl'),     awayFlag:flag('ma'),     homeScore:null, awayScore:null },
-  { id:'r32_4',  date:'2026-06-29', time:'21:30', home:'Alemanha',       away:'Paraguai',          phase:'Oitavas', homeFlag:flag('de'),     awayFlag:flag('py'),     homeScore:null, awayScore:null },
+  { id:'r32_2',  date:'2026-06-29', time:'14:00', home:'Brasil',         away:'Japão',             phase:'16 avos', homeFlag:flag('br'),     awayFlag:flag('jp'),     homeScore:null, awayScore:null },
+  { id:'r32_3',  date:'2026-06-29', time:'20:00', home:'Holanda',        away:'Marrocos',          phase:'16 avos', homeFlag:flag('nl'),     awayFlag:flag('ma'),     homeScore:null, awayScore:null },
+  { id:'r32_4',  date:'2026-06-29', time:'21:30', home:'Alemanha',       away:'Paraguai',          phase:'16 avos', homeFlag:flag('de'),     awayFlag:flag('py'),     homeScore:null, awayScore:null },
 
   // 30/jun — Costa do Marfim vs Noruega (14h BRT) | França vs Suécia (18h BRT) | México vs Equador (20h BRT)
-  { id:'r32_5',  date:'2026-06-30', time:'14:00', home:'Costa do Marfim',away:'Noruega',           phase:'Oitavas', homeFlag:flag('ci'),     awayFlag:flag('no'),     homeScore:null, awayScore:null },
-  { id:'r32_6',  date:'2026-06-30', time:'18:00', home:'França',         away:'Suécia',            phase:'Oitavas', homeFlag:flag('fr'),     awayFlag:flag('se'),     homeScore:null, awayScore:null },
-  { id:'r32_7',  date:'2026-06-30', time:'20:00', home:'México',         away:'Equador',           phase:'Oitavas', homeFlag:flag('mx'),     awayFlag:flag('ec'),     homeScore:null, awayScore:null },
+  { id:'r32_5',  date:'2026-06-30', time:'14:00', home:'Costa do Marfim',away:'Noruega',           phase:'16 avos', homeFlag:flag('ci'),     awayFlag:flag('no'),     homeScore:null, awayScore:null },
+  { id:'r32_6',  date:'2026-06-30', time:'18:00', home:'França',         away:'Suécia',            phase:'16 avos', homeFlag:flag('fr'),     awayFlag:flag('se'),     homeScore:null, awayScore:null },
+  { id:'r32_7',  date:'2026-06-30', time:'20:00', home:'México',         away:'Equador',           phase:'16 avos', homeFlag:flag('mx'),     awayFlag:flag('ec'),     homeScore:null, awayScore:null },
 
   // 1/jul — Inglaterra vs Rep. Dem. Congo (13h BRT) | Bélgica vs Senegal (15h BRT) | EUA vs Bósnia e Herz. (19h BRT)
-  { id:'r32_8',  date:'2026-07-01', time:'13:00', home:'Inglaterra',     away:'Rep. Dem. Congo',   phase:'Oitavas', homeFlag:flag('gb-eng'), awayFlag:flag('cd'),     homeScore:null, awayScore:null },
-  { id:'r32_9',  date:'2026-07-01', time:'15:00', home:'Bélgica',        away:'Senegal',           phase:'Oitavas', homeFlag:flag('be'),     awayFlag:flag('sn'),     homeScore:null, awayScore:null },
-  { id:'r32_10', date:'2026-07-01', time:'19:00', home:'EUA',            away:'Bósnia e Herz.',    phase:'Oitavas', homeFlag:flag('us'),     awayFlag:flag('ba'),     homeScore:null, awayScore:null },
+  { id:'r32_8',  date:'2026-07-01', time:'13:00', home:'Inglaterra',     away:'Rep. Dem. Congo',   phase:'16 avos', homeFlag:flag('gb-eng'), awayFlag:flag('cd'),     homeScore:null, awayScore:null },
+  { id:'r32_9',  date:'2026-07-01', time:'15:00', home:'Bélgica',        away:'Senegal',           phase:'16 avos', homeFlag:flag('be'),     awayFlag:flag('sn'),     homeScore:null, awayScore:null },
+  { id:'r32_10', date:'2026-07-01', time:'19:00', home:'EUA',            away:'Bósnia e Herz.',    phase:'16 avos', homeFlag:flag('us'),     awayFlag:flag('ba'),     homeScore:null, awayScore:null },
 
   // 2/jul — Espanha vs Áustria (16h BRT) | Portugal vs Croácia (20h BRT) | Suíça vs Argélia (21h BRT)
-  { id:'r32_11', date:'2026-07-02', time:'16:00', home:'Espanha',        away:'Áustria',           phase:'Oitavas', homeFlag:flag('es'),     awayFlag:flag('at'),     homeScore:null, awayScore:null },
-  { id:'r32_12', date:'2026-07-02', time:'20:00', home:'Portugal',       away:'Croácia',           phase:'Oitavas', homeFlag:flag('pt'),     awayFlag:flag('hr'),     homeScore:null, awayScore:null },
-  { id:'r32_13', date:'2026-07-02', time:'21:00', home:'Suíça',          away:'Argélia',           phase:'Oitavas', homeFlag:flag('ch'),     awayFlag:flag('dz'),     homeScore:null, awayScore:null },
+  { id:'r32_11', date:'2026-07-02', time:'16:00', home:'Espanha',        away:'Áustria',           phase:'16 avos', homeFlag:flag('es'),     awayFlag:flag('at'),     homeScore:null, awayScore:null },
+  { id:'r32_12', date:'2026-07-02', time:'20:00', home:'Portugal',       away:'Croácia',           phase:'16 avos', homeFlag:flag('pt'),     awayFlag:flag('hr'),     homeScore:null, awayScore:null },
+  { id:'r32_13', date:'2026-07-02', time:'21:00', home:'Suíça',          away:'Argélia',           phase:'16 avos', homeFlag:flag('ch'),     awayFlag:flag('dz'),     homeScore:null, awayScore:null },
 
   // 3/jul — Austrália vs Egito (15h BRT) | Argentina vs Cabo Verde (19h BRT) | Colômbia vs Gana (22:30 BRT)
-  { id:'r32_14', date:'2026-07-03', time:'15:00', home:'Austrália',      away:'Egito',             phase:'Oitavas', homeFlag:flag('au'),     awayFlag:flag('eg'),     homeScore:null, awayScore:null },
-  { id:'r32_15', date:'2026-07-03', time:'19:00', home:'Argentina',      away:'Cabo Verde',        phase:'Oitavas', homeFlag:flag('ar'),     awayFlag:flag('cv'),     homeScore:null, awayScore:null },
-  { id:'r32_16', date:'2026-07-03', time:'22:30', home:'Colômbia',       away:'Gana',              phase:'Oitavas', homeFlag:flag('co'),     awayFlag:flag('gh'),     homeScore:null, awayScore:null },
+  { id:'r32_14', date:'2026-07-03', time:'15:00', home:'Austrália',      away:'Egito',             phase:'16 avos', homeFlag:flag('au'),     awayFlag:flag('eg'),     homeScore:null, awayScore:null },
+  { id:'r32_15', date:'2026-07-03', time:'19:00', home:'Argentina',      away:'Cabo Verde',        phase:'16 avos', homeFlag:flag('ar'),     awayFlag:flag('cv'),     homeScore:null, awayScore:null },
+  { id:'r32_16', date:'2026-07-03', time:'22:30', home:'Colômbia',       away:'Gana',              phase:'16 avos', homeFlag:flag('co'),     awayFlag:flag('gh'),     homeScore:null, awayScore:null },
 
-  // ── Round of 16 (16 avos) ───────────────────────────────────
-  { id:'r16_1', date:'2026-07-05', time:'14:00', home:'Venc. Oit-1',  away:'Venc. Oit-2',  phase:'16 avos', homeFlag:flag('un'), awayFlag:flag('un'), homeScore:null, awayScore:null },
-  { id:'r16_2', date:'2026-07-05', time:'18:00', home:'Venc. Oit-3',  away:'Venc. Oit-4',  phase:'16 avos', homeFlag:flag('un'), awayFlag:flag('un'), homeScore:null, awayScore:null },
-  { id:'r16_3', date:'2026-07-06', time:'14:00', home:'Venc. Oit-5',  away:'Venc. Oit-6',  phase:'16 avos', homeFlag:flag('un'), awayFlag:flag('un'), homeScore:null, awayScore:null },
-  { id:'r16_4', date:'2026-07-06', time:'18:00', home:'Venc. Oit-7',  away:'Venc. Oit-8',  phase:'16 avos', homeFlag:flag('un'), awayFlag:flag('un'), homeScore:null, awayScore:null },
-  { id:'r16_5', date:'2026-07-07', time:'14:00', home:'Venc. Oit-9',  away:'Venc. Oit-10', phase:'16 avos', homeFlag:flag('un'), awayFlag:flag('un'), homeScore:null, awayScore:null },
-  { id:'r16_6', date:'2026-07-07', time:'18:00', home:'Venc. Oit-11', away:'Venc. Oit-12', phase:'16 avos', homeFlag:flag('un'), awayFlag:flag('un'), homeScore:null, awayScore:null },
-  { id:'r16_7', date:'2026-07-08', time:'14:00', home:'Venc. Oit-13', away:'Venc. Oit-14', phase:'16 avos', homeFlag:flag('un'), awayFlag:flag('un'), homeScore:null, awayScore:null },
-  { id:'r16_8', date:'2026-07-08', time:'18:00', home:'Venc. Oit-15', away:'Venc. Oit-16', phase:'16 avos', homeFlag:flag('un'), awayFlag:flag('un'), homeScore:null, awayScore:null },
+  // ── Round of 16 (Oitavas) ───────────────────────────────────
+  { id:'r16_1', date:'2026-07-05', time:'14:00', home:'Venc. 16a-1',  away:'Venc. 16a-2',  phase:'Oitavas', homeFlag:flag('un'), awayFlag:flag('un'), homeScore:null, awayScore:null },
+  { id:'r16_2', date:'2026-07-05', time:'18:00', home:'Venc. 16a-3',  away:'Venc. 16a-4',  phase:'Oitavas', homeFlag:flag('un'), awayFlag:flag('un'), homeScore:null, awayScore:null },
+  { id:'r16_3', date:'2026-07-06', time:'14:00', home:'Venc. 16a-5',  away:'Venc. 16a-6',  phase:'Oitavas', homeFlag:flag('un'), awayFlag:flag('un'), homeScore:null, awayScore:null },
+  { id:'r16_4', date:'2026-07-06', time:'18:00', home:'Venc. 16a-7',  away:'Venc. 16a-8',  phase:'Oitavas', homeFlag:flag('un'), awayFlag:flag('un'), homeScore:null, awayScore:null },
+  { id:'r16_5', date:'2026-07-07', time:'14:00', home:'Venc. 16a-9',  away:'Venc. 16a-10', phase:'Oitavas', homeFlag:flag('un'), awayFlag:flag('un'), homeScore:null, awayScore:null },
+  { id:'r16_6', date:'2026-07-07', time:'18:00', home:'Venc. 16a-11', away:'Venc. 16a-12', phase:'Oitavas', homeFlag:flag('un'), awayFlag:flag('un'), homeScore:null, awayScore:null },
+  { id:'r16_7', date:'2026-07-08', time:'14:00', home:'Venc. 16a-13', away:'Venc. 16a-14', phase:'Oitavas', homeFlag:flag('un'), awayFlag:flag('un'), homeScore:null, awayScore:null },
+  { id:'r16_8', date:'2026-07-08', time:'18:00', home:'Venc. 16a-15', away:'Venc. 16a-16', phase:'Oitavas', homeFlag:flag('un'), awayFlag:flag('un'), homeScore:null, awayScore:null },
 
   // ── Quartas de Final ────────────────────────────────────────
-  { id:'qf1', date:'2026-07-11', time:'16:00', home:'Venc. 16a-1', away:'Venc. 16a-2', phase:'Quartas',  homeFlag:flag('un'), awayFlag:flag('un'), homeScore:null, awayScore:null },
-  { id:'qf2', date:'2026-07-11', time:'20:00', home:'Venc. 16a-3', away:'Venc. 16a-4', phase:'Quartas',  homeFlag:flag('un'), awayFlag:flag('un'), homeScore:null, awayScore:null },
-  { id:'qf3', date:'2026-07-12', time:'16:00', home:'Venc. 16a-5', away:'Venc. 16a-6', phase:'Quartas',  homeFlag:flag('un'), awayFlag:flag('un'), homeScore:null, awayScore:null },
-  { id:'qf4', date:'2026-07-12', time:'20:00', home:'Venc. 16a-7', away:'Venc. 16a-8', phase:'Quartas',  homeFlag:flag('un'), awayFlag:flag('un'), homeScore:null, awayScore:null },
+  { id:'qf1', date:'2026-07-11', time:'16:00', home:'Venc. Oit-1', away:'Venc. Oit-2', phase:'Quartas',  homeFlag:flag('un'), awayFlag:flag('un'), homeScore:null, awayScore:null },
+  { id:'qf2', date:'2026-07-11', time:'20:00', home:'Venc. Oit-3', away:'Venc. Oit-4', phase:'Quartas',  homeFlag:flag('un'), awayFlag:flag('un'), homeScore:null, awayScore:null },
+  { id:'qf3', date:'2026-07-12', time:'16:00', home:'Venc. Oit-5', away:'Venc. Oit-6', phase:'Quartas',  homeFlag:flag('un'), awayFlag:flag('un'), homeScore:null, awayScore:null },
+  { id:'qf4', date:'2026-07-12', time:'20:00', home:'Venc. Oit-7', away:'Venc. Oit-8', phase:'Quartas',  homeFlag:flag('un'), awayFlag:flag('un'), homeScore:null, awayScore:null },
 
   // ── Semifinais ──────────────────────────────────────────────
   { id:'sf1', date:'2026-07-14', time:'16:00', home:'Venc. QF-1', away:'Venc. QF-2', phase:'Semifinal', homeFlag:flag('un'), awayFlag:flag('un'), homeScore:null, awayScore:null },
