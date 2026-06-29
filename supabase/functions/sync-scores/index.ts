@@ -113,6 +113,24 @@ const OUR_GAMES = [
   { id:'g046', date:'2026-06-23', home:'Inglaterra', away:'Gana' },
   { id:'g047', date:'2026-06-23', home:'Panamá', away:'Croácia' },
   { id:'g048', date:'2026-06-23', home:'Colômbia', away:'Rep. Dem. Congo' },
+
+  // 16 avos (Round of 32)
+  { id:'r32_1',  date:'2026-06-28', home:'África do Sul',  away:'Canadá' },
+  { id:'r32_2',  date:'2026-06-29', home:'Brasil',          away:'Japão' },
+  { id:'r32_3',  date:'2026-06-29', home:'Alemanha',        away:'Paraguai' },
+  { id:'r32_4',  date:'2026-06-29', home:'Holanda',         away:'Marrocos' },
+  { id:'r32_5',  date:'2026-06-30', home:'Costa do Marfim', away:'Noruega' },
+  { id:'r32_6',  date:'2026-06-30', home:'França',          away:'Suécia' },
+  { id:'r32_7',  date:'2026-06-30', home:'México',          away:'Equador' },
+  { id:'r32_8',  date:'2026-07-01', home:'Inglaterra',      away:'Rep. Dem. Congo' },
+  { id:'r32_9',  date:'2026-07-01', home:'Bélgica',         away:'Senegal' },
+  { id:'r32_10', date:'2026-07-01', home:'EUA',             away:'Bósnia e Herz.' },
+  { id:'r32_11', date:'2026-07-02', home:'Espanha',         away:'Áustria' },
+  { id:'r32_12', date:'2026-07-02', home:'Portugal',        away:'Croácia' },
+  { id:'r32_13', date:'2026-07-03', home:'Suíça',           away:'Argélia' },
+  { id:'r32_14', date:'2026-07-03', home:'Austrália',       away:'Egito' },
+  { id:'r32_15', date:'2026-07-03', home:'Argentina',       away:'Cabo Verde' },
+  { id:'r32_16', date:'2026-07-03', home:'Colômbia',        away:'Gana' },
 ]
 
 Deno.serve(async (req) => {

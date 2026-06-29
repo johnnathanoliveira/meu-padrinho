@@ -125,32 +125,32 @@ export const worldCupGames = [
 
   // ── FASE ELIMINATÓRIA — Round of 32 (16 avos) ─────────────
   // Confrontos confirmados após encerramento da fase de grupos
-  // Fonte: Wikipedia / FIFA (horários em BRT)
+  // Fonte: SBNation / FIFA (horários em BRT = ET+1h)
 
   // 28/jun — Canadá 1×0 África do Sul
   { id:'r32_1',  date:'2026-06-28', time:'16:00', home:'África do Sul', away:'Canadá',            phase:'16 avos', homeFlag:flag('za'),     awayFlag:flag('ca'),     homeScore:0,    awayScore:1 },
 
-  // 29/jun — Brasil vs Japão (14h BRT) | Holanda vs Marrocos (20h BRT) | Alemanha vs Paraguai (21:30 BRT)
-  { id:'r32_2',  date:'2026-06-29', time:'14:00', home:'Brasil',         away:'Japão',             phase:'16 avos', homeFlag:flag('br'),     awayFlag:flag('jp'),     homeScore:null, awayScore:null },
-  { id:'r32_3',  date:'2026-06-29', time:'20:00', home:'Holanda',        away:'Marrocos',          phase:'16 avos', homeFlag:flag('nl'),     awayFlag:flag('ma'),     homeScore:null, awayScore:null },
-  { id:'r32_4',  date:'2026-06-29', time:'21:30', home:'Alemanha',       away:'Paraguai',          phase:'16 avos', homeFlag:flag('de'),     awayFlag:flag('py'),     homeScore:null, awayScore:null },
+  // 29/jun — Brasil 2×1 Japão (14h BRT) | Alemanha vs Paraguai 17:30 BRT | Holanda vs Marrocos 22:00 BRT
+  { id:'r32_2',  date:'2026-06-29', time:'14:00', home:'Brasil',         away:'Japão',             phase:'16 avos', homeFlag:flag('br'),     awayFlag:flag('jp'),     homeScore:2,    awayScore:1 },
+  { id:'r32_3',  date:'2026-06-29', time:'17:30', home:'Alemanha',       away:'Paraguai',          phase:'16 avos', homeFlag:flag('de'),     awayFlag:flag('py'),     homeScore:null, awayScore:null },
+  { id:'r32_4',  date:'2026-06-29', time:'22:00', home:'Holanda',        away:'Marrocos',          phase:'16 avos', homeFlag:flag('nl'),     awayFlag:flag('ma'),     homeScore:null, awayScore:null },
 
-  // 30/jun — Costa do Marfim vs Noruega (14h BRT) | França vs Suécia (18h BRT) | México vs Equador (20h BRT)
+  // 30/jun — Costa do Marfim vs Noruega 14:00 BRT | França vs Suécia 18:00 BRT | México vs Equador 22:00 BRT
   { id:'r32_5',  date:'2026-06-30', time:'14:00', home:'Costa do Marfim',away:'Noruega',           phase:'16 avos', homeFlag:flag('ci'),     awayFlag:flag('no'),     homeScore:null, awayScore:null },
   { id:'r32_6',  date:'2026-06-30', time:'18:00', home:'França',         away:'Suécia',            phase:'16 avos', homeFlag:flag('fr'),     awayFlag:flag('se'),     homeScore:null, awayScore:null },
-  { id:'r32_7',  date:'2026-06-30', time:'20:00', home:'México',         away:'Equador',           phase:'16 avos', homeFlag:flag('mx'),     awayFlag:flag('ec'),     homeScore:null, awayScore:null },
+  { id:'r32_7',  date:'2026-06-30', time:'22:00', home:'México',         away:'Equador',           phase:'16 avos', homeFlag:flag('mx'),     awayFlag:flag('ec'),     homeScore:null, awayScore:null },
 
-  // 1/jul — Inglaterra vs Rep. Dem. Congo (13h BRT) | Bélgica vs Senegal (15h BRT) | EUA vs Bósnia e Herz. (19h BRT)
+  // 1/jul — Inglaterra vs Rep. Dem. Congo 13:00 BRT | Bélgica vs Senegal 17:00 BRT | EUA vs Bósnia e Herz. 21:00 BRT
   { id:'r32_8',  date:'2026-07-01', time:'13:00', home:'Inglaterra',     away:'Rep. Dem. Congo',   phase:'16 avos', homeFlag:flag('gb-eng'), awayFlag:flag('cd'),     homeScore:null, awayScore:null },
-  { id:'r32_9',  date:'2026-07-01', time:'15:00', home:'Bélgica',        away:'Senegal',           phase:'16 avos', homeFlag:flag('be'),     awayFlag:flag('sn'),     homeScore:null, awayScore:null },
-  { id:'r32_10', date:'2026-07-01', time:'19:00', home:'EUA',            away:'Bósnia e Herz.',    phase:'16 avos', homeFlag:flag('us'),     awayFlag:flag('ba'),     homeScore:null, awayScore:null },
+  { id:'r32_9',  date:'2026-07-01', time:'17:00', home:'Bélgica',        away:'Senegal',           phase:'16 avos', homeFlag:flag('be'),     awayFlag:flag('sn'),     homeScore:null, awayScore:null },
+  { id:'r32_10', date:'2026-07-01', time:'21:00', home:'EUA',            away:'Bósnia e Herz.',    phase:'16 avos', homeFlag:flag('us'),     awayFlag:flag('ba'),     homeScore:null, awayScore:null },
 
-  // 2/jul — Espanha vs Áustria (16h BRT) | Portugal vs Croácia (20h BRT) | Suíça vs Argélia (21h BRT)
+  // 2/jul — Espanha vs Áustria 16:00 BRT | Portugal vs Croácia 20:00 BRT | Suíça vs Argélia 00:00 BRT (3/jul)
   { id:'r32_11', date:'2026-07-02', time:'16:00', home:'Espanha',        away:'Áustria',           phase:'16 avos', homeFlag:flag('es'),     awayFlag:flag('at'),     homeScore:null, awayScore:null },
   { id:'r32_12', date:'2026-07-02', time:'20:00', home:'Portugal',       away:'Croácia',           phase:'16 avos', homeFlag:flag('pt'),     awayFlag:flag('hr'),     homeScore:null, awayScore:null },
-  { id:'r32_13', date:'2026-07-02', time:'21:00', home:'Suíça',          away:'Argélia',           phase:'16 avos', homeFlag:flag('ch'),     awayFlag:flag('dz'),     homeScore:null, awayScore:null },
+  { id:'r32_13', date:'2026-07-03', time:'00:00', home:'Suíça',          away:'Argélia',           phase:'16 avos', homeFlag:flag('ch'),     awayFlag:flag('dz'),     homeScore:null, awayScore:null },
 
-  // 3/jul — Austrália vs Egito (15h BRT) | Argentina vs Cabo Verde (19h BRT) | Colômbia vs Gana (22:30 BRT)
+  // 3/jul — Austrália vs Egito 15:00 BRT | Argentina vs Cabo Verde 19:00 BRT | Colômbia vs Gana 22:30 BRT
   { id:'r32_14', date:'2026-07-03', time:'15:00', home:'Austrália',      away:'Egito',             phase:'16 avos', homeFlag:flag('au'),     awayFlag:flag('eg'),     homeScore:null, awayScore:null },
   { id:'r32_15', date:'2026-07-03', time:'19:00', home:'Argentina',      away:'Cabo Verde',        phase:'16 avos', homeFlag:flag('ar'),     awayFlag:flag('cv'),     homeScore:null, awayScore:null },
   { id:'r32_16', date:'2026-07-03', time:'22:30', home:'Colômbia',       away:'Gana',              phase:'16 avos', homeFlag:flag('co'),     awayFlag:flag('gh'),     homeScore:null, awayScore:null },
